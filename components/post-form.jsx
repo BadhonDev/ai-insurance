@@ -1,16 +1,19 @@
 "use client"
 
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useStateData } from "@/hooks/use-state"
 
 const PostForm = () => {
   const { setData } = useStateData()
+  const [loading, setLoading] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
   const onSubmit = async (data) => {
+    setLoading(true)
     try {
       const res = await fetch("https://form-backend.azurewebsites.net/items", {
         method: "POST",
@@ -19,9 +22,8 @@ const PostForm = () => {
           "content-type": "application/json",
         },
       })
-      console.log("res: ", res)
+
       const parsedData = await res.json()
-      console.log("parsedData: ", parsedData)
       if (res.ok) {
         setData(parsedData)
       } else {
@@ -29,6 +31,8 @@ const PostForm = () => {
       }
     } catch (error) {
       alert(error)
+    } finally {
+      setLoading(false)
     }
   }
   return (
@@ -116,7 +120,17 @@ const PostForm = () => {
             type="submit"
             className="px-10 max-h-12 rounded-md py-2 bg-[#347df6] text-white"
           >
-            Search
+            {!loading ? (
+              <p>Search</p>
+            ) : (
+              <div
+                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-white rounded-full"
+                role="status"
+                aria-label="loading"
+              >
+                <span className="sr-only">Loading...</span>
+              </div>
+            )}
           </button>
         </div>
       </div>

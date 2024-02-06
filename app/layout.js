@@ -1,6 +1,5 @@
 import { Cabin } from "next/font/google"
 import "./globals.css"
-import PrelineScript from "@/components/PrelineScript"
 
 const inter = Cabin({ subsets: ["latin"] })
 
@@ -15,7 +14,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className} style={{ background: "#ebf3fd" }}>
         {children}
       </body>
-      <PrelineScript />
     </html>
   )
 }
