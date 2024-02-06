@@ -10,7 +10,7 @@ const PostForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
   } = useForm()
   const onSubmit = async (data) => {
     setLoading(true)
@@ -47,16 +47,16 @@ const PostForm = () => {
               type="text"
               className="py-3 px-3 w-full bg-transparent border-2 border-[#D8E3E9] text-sm rounded-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
               placeholder="Policy no."
-              {...register("PolicyNo", { required: true })}
+              {...register("PolicyNo")}
             />
-            {errors.PolicyNo && (
+            {/* {errors.PolicyNo && (
               <p
                 className="text-sm text-red-600 mt-2"
                 id="hs-validation-name-error-helper"
               >
                 This field is required
               </p>
-            )}
+            )} */}
           </div>
           <div className="w-full">
             <input
@@ -71,16 +71,16 @@ const PostForm = () => {
               type="text"
               className="py-3 px-3 w-full bg-transparent border-2 border-[#D8E3E9] text-sm rounded-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
               placeholder="Vehicle no."
-              {...register("VehicleNo", { required: true })}
+              {...register("VehicleNo")}
             />
-            {errors.VehicleNo && (
+            {/* {errors.VehicleNo && (
               <p
                 className="text-sm text-red-600 mt-2"
                 id="hs-validation-name-error-helper"
               >
                 This field is required
               </p>
-            )}
+            )} */}
           </div>
         </div>
         <div className="flex m-5 space-x-3">
@@ -89,32 +89,32 @@ const PostForm = () => {
               type="text"
               className="py-3 px-3 w-full bg-transparent border-2 border-[#D8E3E9] text-sm rounded-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
               placeholder="Name"
-              {...register("NameInsured", { required: true })}
+              {...register("NameInsured")}
             />
-            {errors.NameInsured && (
+            {/* {errors.NameInsured && (
               <p
                 className="text-sm text-red-600 mt-2"
                 id="hs-validation-name-error-helper"
               >
                 This field is required
               </p>
-            )}
+            )} */}
           </div>
           <div className="w-full">
             <input
               type="text"
               className="py-3 px-3 bg-transparent w-full border-2 border-[#D8E3E9] text-sm rounded-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
               placeholder="Mobile no."
-              {...register("MobileNoInsured", { required: true })}
+              {...register("MobileNoInsured")}
             />
-            {errors.MobileNoInsured && (
+            {/* {errors.MobileNoInsured && (
               <p
                 className="text-sm text-red-600 mt-2"
                 id="hs-validation-name-error-helper"
               >
                 This field is required
               </p>
-            )}
+            )} */}
           </div>
           <button
             type="submit"
