@@ -7,7 +7,6 @@ import { useStateData } from "@/hooks/use-state"
 
 const Container = () => {
   const { data, setData } = useStateData()
-  console.log("initial data: ", data)
   return (
     <div className="max-w-[1400px] px-4 py-6 mx-auto">
       <div className="mb-8">
