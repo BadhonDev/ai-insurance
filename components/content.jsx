@@ -58,7 +58,7 @@ const Content = () => {
         session_id: selectedHistoryId,
         user_id: selectedUserId,
       }
-      const result = await fetch(`${url}/chat`, {
+      const result = await fetch(`${url}/sql`, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(request),

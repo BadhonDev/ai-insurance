@@ -51,7 +51,7 @@ const FaqOffCanvas = () => {
         session_id: sessionId,
         user_id: userId,
       }
-      const result = await fetch(`${url}/chat`, {
+      const result = await fetch(`${url}/sql`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
